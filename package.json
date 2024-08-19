@@ -4,17 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && npx playwright install chromium",
-    "postinstall": "npx playwright install-deps",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "npx playwright install"
   },
   "dependencies": {
-    "@playwright/test": "^1.46.1",
     "next": "14.2.5",
-    "playwright": "^1.46.1",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "playwright-core": "^1.46.1"
   },
   "devDependencies": {
     "@types/node": "^22.4.1"
