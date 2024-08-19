@@ -1,4 +1,4 @@
-const { chromium } = require('playwright-core');
+const { chromium } = require('playwright');
 
 async function scrapeGoogleRating() {
     let browser;
