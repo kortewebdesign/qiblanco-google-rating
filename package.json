@@ -3,10 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@playwright/test": "^1.46.1",
+    "axios": "^1.7.4",
+    "express": "^4.19.2",
+    "node-schedule": "^2.1.1",
+    "playwright-core": "^1.46.1"
+  }
 }
