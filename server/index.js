@@ -20,6 +20,7 @@ schedule.scheduleJob('0 * * * *', updateRating);
 
 app.get('/api/rating', (req, res) => {
     res.json({ rating: latestRating });
+    console.log(res.json({ rating: latestRating }))
 });
 
 app.get('/', (req, res) => {
