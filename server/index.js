@@ -21,17 +21,8 @@ app.get('/api/rating', (req, res) => {
     console.log(res.json({ rating: latestRating }))
 });
 
-app.get('/', (req, res) => {
-  // Create an absolute path using path.join and __dirname
-  const filePath = path.join(__dirname, '..', 'index.html');
-  
-  // Send the file
-  res.sendFile(filePath, err => {
-      if (err) {
-          console.error('Error sending file:', err);
-          res.status(err.status).end();
-      }
-  });
+app.get("/", (req, res) => {
+  res.send("Express on Vercel");
 });
 
 app.listen(port, () => {
