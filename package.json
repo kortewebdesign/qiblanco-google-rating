@@ -5,13 +5,14 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && npx playwright install chromium",
+    "postinstall": "npx playwright install-deps",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@playwright/test": "^1.46.1",
     "next": "14.2.5",
-    "playwright": "^1.46.1",
+    "playwright-core": "^1.46.1",
     "react": "^18",
     "react-dom": "^18"
   },

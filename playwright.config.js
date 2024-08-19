@@ -1,6 +1,12 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
+  use: {
+    headless: true,
+    launchOptions: {
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    },
+  },
   projects: [
     /* Test against desktop browsers */
     {
