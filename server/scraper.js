@@ -3,6 +3,7 @@ const { executablePath } = require('@playwright/test'); // Import to find the br
 
 async function scrapeGoogleRating() { 
     let browser;
+
     try {
         // Launch the browser using the executable path from @playwright/test
         browser = await chromium.launch({
