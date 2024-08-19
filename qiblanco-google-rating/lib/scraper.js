@@ -1,11 +1,8 @@
 const { chromium } = require('playwright-core');
-const { executablePath } = require('@playwright/test'); // Import to find the browser executable path
 
-async function scrapeGoogleRating() { 
+async function scrapeGoogleRating() {
     let browser;
-
     try {
-        // Launch the browser using the executable path from @playwright/test
         browser = await chromium.launch({
             headless: true,
             args: ['--no-sandbox', '--disable-setuid-sandbox'],
@@ -16,9 +13,7 @@ async function scrapeGoogleRating() {
         await page.waitForSelector('div.reputon-google-reviews-widget', { timeout: 10000 });
         await page.waitForSelector('div.reputon-count-number', { timeout: 10000 });
 
-        const rating = await page.evaluate(() => {
-            return document.querySelector('div.reputon-count-number').innerText;
-        });
+        const rating = await page.$eval('div.reputon-count-number', el => el.innerText);
 
         return rating;
     } catch (error) {
