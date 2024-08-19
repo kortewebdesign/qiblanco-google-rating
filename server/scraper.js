@@ -8,6 +8,7 @@ async function scrapeGoogleRating() {
         // Launch the browser using the executable path from @playwright/test
         browser = await chromium.launch({
             headless: true,
+            executablePath: executablePath('chromium'), // Use the correct executable path
             args: ['--no-sandbox', '--disable-setuid-sandbox'],
         });
 
