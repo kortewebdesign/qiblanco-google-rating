@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 4000;
@@ -21,6 +22,18 @@ app.get('/api/rating', (req, res) => {
     res.json({ rating: latestRating });
 });
 
+app.get('/', (req, res) => {
+  // Create an absolute path using path.join and __dirname
+  const filePath = path.join(__dirname, '..', 'index.html');
+  
+  // Send the file
+  res.sendFile(filePath, err => {
+      if (err) {
+          console.error('Error sending file:', err);
+          res.status(err.status).end();
+      }
+  });
+});
 
 app.listen(port, () => {
   console.log(`App listening on port ${port}`)
