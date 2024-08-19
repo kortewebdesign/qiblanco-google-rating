@@ -6,16 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "postinstall": "npx playwright install && npx playwright install-deps"
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "14.2.5",
+    "playwright-core": "^1.46.1",
     "react": "^18",
-    "react-dom": "^18",
-    "playwright-core": "^1.46.1"
+    "react-dom": "^18"
   },
   "devDependencies": {
+    "@sparticuz/chromium": "^106.0.2",
     "@types/node": "^22.4.1"
   }
 }
